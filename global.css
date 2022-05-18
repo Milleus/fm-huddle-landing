@@ -1,0 +1,317 @@
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+:root {
+  --clr-violet-400: 257 40% 49%;
+  --clr-magenta-400: 300 69% 71%;
+  --clr-magenta-500: 322 100% 66%;
+
+  --clr-neutral-100: 0 0% 100%;
+  --clr-neutral-900: 0 0% 0%;
+
+  --ff-heading: 'Poppins', sans-serif;
+  --ff-body: 'Open Sans', sans-serif;
+
+  --fs-200: 0.75rem;
+  --fs-300: 0.875rem;
+  --fs-400: 1rem;
+  --fs-500: 1.25rem;
+  --fs-600: 1.5rem;
+
+  --fw-400: 400;
+  --fw-600: 600;
+}
+
+@media (min-width: 55em) {
+  :root {
+    --fs-200: 1.125rem;
+    --fs-400: 1.125rem;
+    --fs-600: 2.5rem;
+  }
+}
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--ff-body);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-400);
+  color: hsl(var(--clr-neutral-100));
+  background-color: hsl(var(--clr-violet-400));
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------- */
+/* Composition         */
+/* ------------------- */
+.flex {
+  display: flex;
+  gap: var(--flex-gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--grid-gap, 1rem);
+}
+
+/* ------------------- */
+/* Utility             */
+/* ------------------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.ff-heading {
+  font-family: var(--ff-heading);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.fw-600 {
+  font-weight: var(--fw-600);
+}
+
+/* ------------------- */
+/* Block               */
+/* ------------------- */
+.container {
+  --grid-gap: 0;
+  place-items: center;
+  grid-template-rows: min-content auto min-content;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  min-height: 100vh;
+  min-width: fit-content;
+  padding: 2.5rem 2.25rem;
+  background-image: url(/images/bg-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  grid-area: header;
+  justify-self: flex-start;
+}
+
+main {
+  grid-area: main;
+  text-align: center;
+}
+
+footer {
+  grid-area: footer;
+}
+
+header > .logo {
+  max-width: 7.5rem;
+}
+
+main > .intro {
+  --flex-gap: 3.75rem;
+  flex-direction: column;
+  margin-block: 4.25rem;
+}
+
+main > .intro p {
+  max-width: 50ch;
+  margin-block: 1rem 1.5rem;
+}
+
+footer > ul {
+  --flex-gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/list-style#accessibility_concerns */
+footer > ul li::before {
+  content: "\200B";
+  display: block;
+  height: 0;
+}
+
+@media (min-width: 55em) {
+  .container {
+    padding: 4rem 5rem 2.5rem;
+    background-image: url(/images/bg-desktop.svg);
+  }
+
+  header > .logo {
+    max-width: 12.5rem;
+  }
+
+  main {
+    text-align: start;
+  }
+
+  main > .intro {
+    flex-direction: row;
+    margin-block: 6.5rem 1.75rem;
+  }
+
+  main > .intro h1 {
+    margin-top: 2rem;
+  }
+
+  main > .intro p {
+    margin-block: 1.5rem;
+  }
+
+  footer {
+    justify-self: flex-end;
+  }
+
+  footer > ul {
+    --flex-gap: 1rem;
+  }
+}
+
+/* ------------------- */
+/* Exception           */
+/* ------------------- */
+.button {
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  font-size: var(--fs-200);
+  font-weight: var(--fw-400);
+  text-align: center;
+}
+
+.button[data-type="primary"] {
+  color: hsl(var(--clr-violet-400));
+  background-color: hsl(var(--clr-neutral-100));
+  padding: 1em 6.25em;
+  border-radius: 1.67em;
+  box-shadow: 1px 3px 5px hsl(var(--clr-neutral-900) / 0.27);
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+}
+
+.button[data-type="primary"]:hover,
+.button[data-type="primary"]:focus {
+  color: hsl(var(--clr-neutral-100));
+  background-color: hsl(var(--clr-magenta-400));
+}
+
+.link {
+  text-align: center;
+}
+
+.link[data-type="icon"] {
+  display: grid;
+  place-items: center;
+  padding: 0.375rem;
+  border-radius: 50%;
+  border: 1px solid hsl(var(--clr-neutral-100));
+  color: hsl(var(--clr-neutral-100));
+  font-size: var(--fs-300);
+  text-decoration: none;
+  transition: border-color 200ms ease-in-out, color 200ms ease-in-out;
+}
+
+.link[data-type="icon"]:hover,
+.link[data-type="icon"]:focus {
+  color: hsl(var(--clr-magenta-500));
+  border-color: hsl(var(--clr-magenta-500));
+}
+
+@media (min-width: 55em) {
+  .button[data-type="primary"] {
+    padding: 0.75em 3.75em;
+    box-shadow: 2px 4px 9px 3px hsl(var(--clr-neutral-900) / 0.26);
+  }
+
+  .link[data-type="icon"] {
+    padding: 0.5em;
+    font-size: var(--fs-500);
+  }
+}

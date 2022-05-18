@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Dave Quah (@Milleus)">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Huddle landing page with single introductory section</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/icon.css">
+  <link rel="stylesheet" href="/global.css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5W6QZZYV2W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-5W6QZZYV2W');
+  </script>
+</head>
+
+<body>
+  <div class="container grid">
+    <header>
+      <img class="logo" src="/images/logo.svg" alt="Huddle logo">
+    </header>
+    <main>
+      <div class="intro flex">
+        <img src="/images/illustration-mockups.svg" alt="Illustration of mockups">
+        <div>
+          <h1 class="ff-heading fs-600 fw-600">Build The Community Your Fans Will Love</h1>
+          <p>
+            Huddle re-imagines the way we build communities. You have a voice, but so does your audience.
+            Create connections with your users as you engage in genuine discussion.
+          </p>
+          <button class="button" data-type="primary">Register</button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <h2 class="sr-only">Social media</h2>
+      <ul class="flex">
+        <li>
+          <a class="link icon-facebook" data-type="icon" href="#">
+            <span class="sr-only">Facebook</span>
+          </a>
+        </li>
+        <li>
+          <a class="link icon-twitter" data-type="icon" href="#">
+            <span class="sr-only">Twitter</span>
+          </a>
+        </li>
+        <li>
+          <a class="link icon-instagram" data-type="icon" href="#">
+            <span class="sr-only">Instagram</span>
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </div>
+</body>
+
+</html>
