@@ -26,11 +26,11 @@ Users should be able to:
 
 Desktop view
 
-<img src="./docs/landing-desktop.png?raw=true" width="100%" alt="desktop view"/>
+<img src="./docs/landing-desktop.png?jpg=true" width="100%" alt="desktop view"/>
 
 Mobile view
 
-<img src="./docs/landing-mobile.png?raw=true" width="375px" alt="mobile view"/>
+<img src="./docs/landing-mobile.png?jpg=true" width="375px" alt="mobile view"/>
 
 ### Links
 
